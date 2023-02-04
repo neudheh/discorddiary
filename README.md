@@ -11,7 +11,7 @@ If it is a new month, the bot will create a new discord channel with the month a
 https://user-images.githubusercontent.com/39615611/216775709-35d30f50-829f-4f65-92e0-1a94292e3ab9.mp4
 
 When a user sends a message for the first time that day, the bot will tell the user's current streak and thank them for mantaining their streak.
-**New user that has never used the bot before*:
+**New user that has never used the bot before**:
 
 https://user-images.githubusercontent.com/39615611/216775930-afdfdcf2-da65-4951-8a93-5a2df114308f.mp4
 
