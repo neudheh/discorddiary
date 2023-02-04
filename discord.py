@@ -66,12 +66,12 @@ async def eventLoop():
     with open("date.json", "w") as file:
         json.dump(currentDate,file)        
 
-    with open("streaks.json", "r") as file:
+    with open("streaks.json", "r") as file:                
         streaksDict = json.load(file)
     for i in streaksDict:
-        userInfoDict = streaksDict[i]
+        userInfoDict = streaksDict[i]                        # goes through all user records in the database and checks if a user has an active streak, and if they have not chatted yet.
         if userInfoDict["sentMessage"] == False and userInfoDict["streak"] > 0:
-            user = discordClient.get_user(userInfoDict)
+            user = discordClient.get_user(userInfoDict)      # resets users streak and notifies user
             channelObject.send(f'{user.mention}, you broke your streak of {userInfoDict["streak"]}!')
             userInfoDict["streak"] = 0
         userInfoDict["sentMessage"] = False
@@ -84,8 +84,8 @@ async def on_message(message):
     with open("streaks.json", "r") as file:
         streaksDict = json.load(file)
     
-    if message.author.id in streaksDict:                      #Finds the user in the data base and updates thier strak, if there is no record, i creates a default and sets the streak to 1
-        userInfoDict = streaksDict[message.author.id]
+    if str(message.author.id) in streaksDict:                      #Finds the user in the data base and updates thier streak, if there is no record, it creates a default and sets the streak to 1
+        userInfoDict = streaksDict[str(message.author.id)]
         userInfoDict["streak"] = userInfoDict["streak"] + 1
         userInfoDict["sentMessage"] = True
         streaksDict[message.author.id] = userInfoDict
