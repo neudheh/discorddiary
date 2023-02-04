@@ -2,7 +2,7 @@ import discord, datetime, json
 from discord.ext import tasks
 
 
-discordToken = "MTA2NDg3OTY2MDYzNjMyMzg2MA.GN4gaq.5tdL6WJ1SK_mU7b8OP6YruN4v29SjJy_x5NOgA"
+discordToken = "token that i accidentally left here whoops"
 discordIntents = discord.Intents(messages=True, guilds=True, members=True)
 discordClient  = discord.Client(intents = discordIntents)
 serverObject = None
